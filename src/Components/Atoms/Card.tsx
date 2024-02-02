@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { HDBIcon } from "../../assets";
 import { Dot } from ".";
+import { detectPhoneNumbers } from "../../utils/function";
 
 interface Props {
   data: any;
@@ -8,6 +9,7 @@ interface Props {
 
 const Card = ({ data }: Props) => {
   const [showDesc, setShowDesc] = useState<boolean>(false);
+  const [active, setActive] = useState<boolean>(false);
 
   return (
     <div className="w-full bg-white font-light border shadow-md rounded-lg overflow-hidden duration-300 hover:shadow-sm">
@@ -33,7 +35,7 @@ const Card = ({ data }: Props) => {
             </div>
             <div className="">
               <p className="flex items-center pb-1 md:text-sm">
-                {data.project_type} <Dot /> {data.year} <Dot /> 
+                {data.project_type} <Dot /> {data.year} <Dot />
                 {data.ownership_type}
               </p>
               <p className="md:text-sm">{data.availabilities_label}</p>
@@ -50,7 +52,14 @@ const Card = ({ data }: Props) => {
         {/* footer */}
         <div>
           {showDesc && (
-            <p className="text-sm pt-4 md:text-xs">{data.description}</p>
+            <p
+              className="cursor-pointer text-sm pt-4 md:text-xs"
+              onClick={() => setActive(!active)}
+            >
+              {!active
+                ? detectPhoneNumbers(data.description)
+                : data.description}
+            </p>
           )}
           <div
             onClick={() => setShowDesc(!showDesc)}
