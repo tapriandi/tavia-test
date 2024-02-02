@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function SectionTitle() {
   return (
     <div className="pb-6 pt-10">

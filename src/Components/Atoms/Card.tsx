@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { HDBIcon } from "../../assets";
 import { Dot } from ".";
 import { detectPhoneNumbers } from "../../utils/function";

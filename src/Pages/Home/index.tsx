@@ -1,4 +1,3 @@
-import React from "react";
 import Data from "../../store.json";
 import { Card, Footer, Header, SectionTitle } from "../../Components/Atoms";
 import { Bg } from "../../assets";

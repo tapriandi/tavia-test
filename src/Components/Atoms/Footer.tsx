@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function Header() {
   return (
     <div className="py-8 bg-[#001D4C]">

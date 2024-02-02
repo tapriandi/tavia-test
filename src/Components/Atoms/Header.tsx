@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { TaviaDark } from "../../assets";
 
 export default function Header() {
