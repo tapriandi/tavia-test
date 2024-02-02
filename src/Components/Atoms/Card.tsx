@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { HDBIcon } from "../../assets";
+import { Dot } from ".";
 
 interface Props {
   data: any;
@@ -18,7 +19,11 @@ const Card = ({ data }: Props) => {
         <div className="flex justify-between lg:flex-col lg:justify-normal lg:items-start">
           <div>
             <div className="flex space-x-4 pb-3 md:space-x-3">
-              <img src={HDBIcon} className="w-10 object-contain md:w-8" loading="lazy" />
+              <img
+                src={HDBIcon}
+                className="w-10 object-contain md:w-8"
+                loading="lazy"
+              />
               <div>
                 <p className="text-2xl font-bold text-black pb-1 lg:text-xl md:text-lg md:pb-0">
                   {data.title}
@@ -27,8 +32,9 @@ const Card = ({ data }: Props) => {
               </div>
             </div>
             <div className="">
-              <p className="pb-1 md:text-sm">
-                {data.project_type} .{data.year} .{data.ownership_type}
+              <p className="flex items-center pb-1 md:text-sm">
+                {data.project_type} <Dot /> {data.year} <Dot /> 
+                {data.ownership_type}
               </p>
               <p className="md:text-sm">{data.availabilities_label}</p>
             </div>
@@ -43,7 +49,9 @@ const Card = ({ data }: Props) => {
 
         {/* footer */}
         <div>
-          {showDesc && <p className="text-sm pt-4 md:text-xs">{data.description}</p>}
+          {showDesc && (
+            <p className="text-sm pt-4 md:text-xs">{data.description}</p>
+          )}
           <div
             onClick={() => setShowDesc(!showDesc)}
             className="text-right pt-4 font-bold text-orange cursor-pointer text-orange-400 hover:underline md:text-xs md:pr-4 md:pb-1 md:font-medium"
