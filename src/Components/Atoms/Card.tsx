@@ -10,9 +10,9 @@ const Card = ({ data }: Props) => {
   const [showDesc, setShowDesc] = useState<boolean>(false);
 
   return (
-    <div style={{ width: "48%" }}>
-      <div style={{ width: "100%" }}>
-        <img src={data.pic} className="row" style={{ width: "100%" }} />
+    <div >
+      <div >
+        <img src={data.pic} className="row" />
       </div>
       <div>
         <div className="row">
@@ -33,7 +33,7 @@ const Card = ({ data }: Props) => {
           </div>
 
           <div>
-            <p>
+            <p className="text-red-500">
               ${data.psf_min} - ${data.psf_min} psf
             </p>
             <p>{data.subprice_label}</p>
