@@ -27,13 +27,13 @@ const Card = ({ data }: Props) => {
                 loading="lazy"
               />
               <div>
-                <p className="text-2xl font-bold text-black pb-1 lg:text-xl md:text-lg md:pb-0">
+                <p className="text-2xl font-bold text-mainBlack pb-1 lg:text-xl md:text-lg md:pb-0">
                   {data.title}
                 </p>
-                <p className="text-sm md:text-xs">{data.address}</p>
+                <p className="text-mainGray text-sm md:text-xs">{data.address}</p>
               </div>
             </div>
-            <div className="">
+            <div className="text-mainBlack">
               <p className="flex items-center pb-1 md:text-sm">
                 {data.project_type} <Dot /> {data.year} <Dot />
                 {data.ownership_type}
@@ -41,11 +41,11 @@ const Card = ({ data }: Props) => {
               <p className="md:text-sm">{data.availabilities_label}</p>
             </div>
           </div>
-          <div className="text-right lg:text-left lg:pt-4">
-            <p className="flex font-bold pb-1 text-lg md:text-base">
+          <div className="text-right lg:text-left lg:pt-4 md:flex items-center md:space-x-4">
+            <p className="flex font-bold pb-1 text-lg md:text-base text-mainBlack">
               ${data.psf_min} - ${data.psf_min} psf
             </p>
-            <p className="text-sm md:text-sm">{data.subprice_label}</p>
+            <p className="text-sm md:text-xs text-mainGray">{data.subprice_label}</p>
           </div>
         </div>
 
@@ -63,7 +63,7 @@ const Card = ({ data }: Props) => {
           )}
           <div
             onClick={() => setShowDesc(!showDesc)}
-            className="text-right pt-4 font-bold text-orange cursor-pointer text-orange-400 hover:underline md:text-xs md:pr-4 md:pb-1 md:font-medium"
+            className="text-right pt-4 font-bold text-orange cursor-pointer hover:underline md:text-xs md:pr-4 md:pb-1 md:font-medium text-mainOrange"
           >
             {showDesc ? "Hide description" : "See description"}
           </div>

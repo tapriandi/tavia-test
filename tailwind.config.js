@@ -9,7 +9,14 @@ export default {
       md: { max: "767px" },
       sm: { max: "639px" },
     },
-    extend: {},
+
+    extend: {
+      colors: {
+        mainBlack: "#1A2258",
+        mainGray: "#787D9C",
+        mainOrange: "#F1833E",
+      },
+    },
   },
   plugins: [],
 };
