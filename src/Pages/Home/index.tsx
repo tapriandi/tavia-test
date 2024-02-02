@@ -1,12 +1,24 @@
 import React from "react";
 import Data from "../../store.json";
-import { Card } from "../../Components/Atoms";
+import { Card, Footer, Header, SectionTitle } from "../../Components/Atoms";
 
 const index = () => {
   return (
     <>
-      <div className="pt-14 pb-20 lg:px-[4%]">
-        <div className="w-full px-[12%] lg:px-0">
+      <Header />
+      <div className="pb-20">
+        <div className="h-screen w-full flex flex-col items-center justify-center bg-gradient-to-b from-blue-800 to-blue-500">
+          <p className="text-6xl font-bold pb-5 text-center lg:text-4xl md:text-3xl text-white">
+            Living with comfortable
+          </p>
+          <p className="text-3xl text-center max-w-3xl pt-5 lg:text-2xl md:text-xl text-white">
+            Kami berkomitmen untuk memberikan kualitas yang terbaik bagi rekanan
+            kami dan juga pelanggan kami.
+          </p>
+        </div>
+
+        <div className="w-full px-[12%] lg:px-[4%]">
+          <SectionTitle />
           <div className="grid grid-cols-2 gap-5 w-full lg:gap-4 md:grid-cols-1">
             {Data.map((item, index) => (
               <Card key={index} data={item} />
@@ -14,6 +26,7 @@ const index = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
